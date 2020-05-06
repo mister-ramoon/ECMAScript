@@ -116,3 +116,39 @@ helloPromise()
     .then(response => console.log(response))
     .catch(error => console.log(error))
 
+//clases
+class calculator {
+    constructor() {
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+    suma(valueA, valueB){
+        this.valueA = valueA;
+        this.valueB = valueB;
+
+        return this.valueA + this.valueB;
+    }
+}
+
+const calc = new calculator();
+console.log(calc.suma(2, 2));
+
+//modulos
+import { hello } from './module';
+
+hello();
+
+//Generadores
+function * helloWorld(){
+    if(true){
+        yield 'Hello, ';
+    }
+    if (true) {
+        yield 'World';
+    }
+};
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
